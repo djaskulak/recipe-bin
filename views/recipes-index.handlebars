@@ -1,15 +1,12 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <ul>
-      {{#each recipes}}
-        <li class="list-group-item">
-          <div class="lead"><a href="/recipes/{{this._id}}">{{this.title}}</a></div>
-          <a href="{{this.url}}" target="_blank">{{this.url}}</a>
-          <div class="text-right">
-            <a href="/n/{{this.type}}">{{this.type}}</a>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
-  </div>
+<div class="recipe-cards">
+  {{#each recipes}}
+      <div class="card recipe-cards" style="width: 18rem;">
+        <div class="card-body">
+          <a href="/recipes/{{this._id}}"><h5 class="card-title">{{this.title}}</h5></a>
+          <a href="/n/{{this.type}}"><h6 class="card-subtitle mb-2 text-muted">{{this.type}}</h6></a>
+          <p class="card-text">{{this.summary}}</p>
+          <a href="{{this.url}}" class="card-link">Recipe link</a>
+        </div>
+      </div>
+  {{/each}}
 </div>
