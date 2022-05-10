@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "recipe-share",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djaskulak/recipe-share.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djaskulak/recipe-share/issues"
+  },
+  "homepage": "https://github.com/djaskulak/recipe-share#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.5"
+  }
+}
