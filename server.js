@@ -11,16 +11,6 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-// HOME
-app.get('/', (req, res) => {
-  res.render('home');
-});
-
-// NEW RECIPE
-app.get('/recipes/new', (req, res) => {
-  res.render('recipes-new')
-})
-
 // Set db
 require('./data/recipe-db');
 
