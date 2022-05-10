@@ -25,4 +25,13 @@ module.exports = (app) => {
   app.get('/recipes/new', (req, res) => {
     res.render('recipes-new')
   })
+
+  // LOOK UP THE POST
+  app.get('/recipes/:id', (req, res) => {
+    Recipe.findById(req.params.id).lean()
+      .then((recipe) => res.render('recipes-show', { recipe }))
+      .catch((err) => {
+        console.log(err.message);
+      });
+  });
 };
