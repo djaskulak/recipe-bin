@@ -5,6 +5,11 @@ const Recipe = require('../models/recipe')
 module.exports = (app) => {
   // HOME
   app.get('/', (req, res) => {
+    res.render('home')
+  })
+
+  // RECIPES
+  app.get('/recipes', (req, res) => {
     Recipe.find({}).lean()
       .then((recipes) => res.render('recipes-index', { recipes }))
       .catch((err) => {
