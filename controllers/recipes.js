@@ -26,12 +26,21 @@ module.exports = (app) => {
     res.render('recipes-new')
   })
 
-  // LOOK UP THE POST
+  // LOOK UP THE RECIPE
   app.get('/recipes/:id', (req, res) => {
     Recipe.findById(req.params.id).lean()
       .then((recipe) => res.render('recipes-show', { recipe }))
       .catch((err) => {
         console.log(err.message);
+      });
+  });
+
+  // TYPE
+  app.get('/n/:type', (req, res) => {
+    Recipe.find({ type: req.params.type }).lean()
+      .then((recipes) => res.render('recipes-index', { recipes }))
+      .catch((err) => {
+        console.log(err);
       });
   });
 };
