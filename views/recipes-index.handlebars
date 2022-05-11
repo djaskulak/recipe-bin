@@ -1,6 +1,14 @@
-<div class="recipe-cards">
+<div 
+  class="recipe-cards"
+  style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  "
+
+>
   {{#each recipes}}
-      <div class="card recipe-cards" style="width: 18rem;">
+      <div class="card recipe-cards" style="width: 18rem; margin: 10px;">
         <div class="card-body">
           <a href="/recipes/{{this._id}}"><h5 class="card-title">{{this.title}}</h5></a>
           <a href="/n/{{this.type}}"><h6 class="card-subtitle mb-2 text-muted">{{this.type}}</h6></a>
